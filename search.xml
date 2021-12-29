@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Java基础语法</title>
+    <url>/2021/12/30/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><ul>
+<li>包名：小写</li>
+<li>类名接口名：首字母大写</li>
+<li>变量名方法名：首字母小写，从第二个单词开始首字母大写</li>
+<li>常量名：所有字母都大写，不同单词之间用下划线分割</li>
+</ul>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="使用变量的注意点："><a href="#使用变量的注意点：" class="headerlink" title="使用变量的注意点："></a>使用变量的注意点：</h3><ul>
+<li>Java中的变量都必须要先定义后使用</li>
+<li>变量的作用域定义在{}内</li>
+<li>只有在作用域中才可以使用变量</li>
+<li>同一个作用域内，不能定义两个相同名称的变量</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="变量的基本类型"><a href="#变量的基本类型" class="headerlink" title="变量的基本类型"></a>变量的基本类型</h3><h4 id="基本数据类型（primitive-type）"><a href="#基本数据类型（primitive-type）" class="headerlink" title="基本数据类型（primitive type）"></a>基本数据类型（primitive type）</h4><ul>
+<li>数值型（整数型byte,short,int，long和浮点数double，float）</li>
+<li>字符型（char)</li>
+<li>布尔型（boolean）</li>
+</ul>
+<h3 id="引用数据类型（reference-type）"><a href="#引用数据类型（reference-type）" class="headerlink" title="引用数据类型（reference type）"></a>引用数据类型（reference type）</h3><ul>
+<li>类（class）</li>
+<li>接口（interfence）</li>
+<li>数组（array）</li>
+</ul>
+<h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><p>对于</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">byte</span> <span class="keyword">short</span> <span class="keyword">int</span> <span class="keyword">long</span> <span class="keyword">float</span> <span class="keyword">double</span></span><br></pre></td></tr></table></figure>
+
+<p>之间做运算，自动向右转换</p>
+<p><strong>如果是byte，short和char之间做运算，结果为int</strong></p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p><strong>是自动类型转换的逆运算</strong></p>
+<p>例如：想要把一个double类型的变量转换为一个int类型变量</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//报告错误</span></span><br><span class="line"><span class="keyword">double</span> a = <span class="number">12.3</span></span><br><span class="line"><span class="keyword">int</span> b = <span class="number">1</span>;</span><br><span class="line"><span class="comment">//正确</span></span><br><span class="line"><span class="keyword">double</span> a = <span class="number">12.3</span></span><br><span class="line"><span class="keyword">int</span> b = (<span class="keyword">int</span>) a;</span><br></pre></td></tr></table></figure>
+
+<p>但是注意会损失精度</p>
+<h3 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h3><h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li>是一个引用数据类型</li>
+<li>可以直接串接一个字符串或者串接一个其他类型的变量</li>
+</ul>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><ol>
+<li><p>关于/和%</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">18</span>;</span><br><span class="line">System.out.println(a / <span class="number">10</span>);<span class="comment">//输出为1</span></span><br><span class="line">System.out.println(a % <span class="number">10</span>);<span class="comment">//输出为8</span></span><br></pre></td></tr></table></figure>
+
+<p>前者为除号，后者为取余</p>
+</li>
+<li><p>关于=和==</p>
+<p><em><strong><u>前者为赋值符号，后者为数学意义上的等号</u></strong></em></p>
+</li>
+<li><p>关于+=</p>
+<p>看例子</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">a = a+ <span class="number">2</span>;<span class="comment">//报错，无法 将一个int类型转换为short类型。需要进行强制类型转换</span></span><br><span class="line">a += <span class="number">2</span>;<span class="comment">//正确。a = 12</span></span><br></pre></td></tr></table></figure>
+
+<p>也就是说，+=不改变变量本身的类型</p>
+</li>
+</ol>
+<h3 id="自加和自减操作-关于a-和-a的区别）"><a href="#自加和自减操作-关于a-和-a的区别）" class="headerlink" title="自加和自减操作(关于a++和++a的区别）"></a>自加和自减操作(关于a++和++a的区别）</h3><p>首先看一段代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">System.out.println(a++);</span><br><span class="line">System.out.println(++a);</span><br></pre></td></tr></table></figure>
+
+<p>输出为10和12。</p>
+<p>再看一段代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b = a++;</span><br><span class="line">System.out.println(a);</span><br><span class="line">System.out.println(b);</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为11和10</p>
+<p>最后一段代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b = ++a;</span><br><span class="line">System.out.println(a);</span><br><span class="line">System.out.println(b);</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为11和11</p>
+<p><em><strong><u>也就是说，a++是先赋值，再自加，++a是先自加，再赋值。</u></strong></em></p>
+<h3 id="关于三元运算符"><a href="#关于三元运算符" class="headerlink" title="关于三元运算符"></a>关于三元运算符</h3><p>下面三种形式是等同的</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">boolean</span> b = a &lt; <span class="number">30</span> ? <span class="keyword">true</span>:<span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">boolean</span> b &lt; <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">if</span>(a &lt; <span class="number">30</span> ) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">false</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="数组的一些特点"><a href="#数组的一些特点" class="headerlink" title="数组的一些特点"></a>数组的一些特点</h3><ul>
+<li>数组是在内存中分配了一块连续的内存空间</li>
+<li>数组是一种引用数据类型</li>
+<li>数组存储的元素可以是引用数据类型也可以是基本数据类型</li>
+<li>数组一旦初始化则其长度就固定了</li>
+</ul>
+<h3 id="数组的声明和初始化"><a href="#数组的声明和初始化" class="headerlink" title="数组的声明和初始化"></a>数组的声明和初始化</h3><h4 id="静态初始化"><a href="#静态初始化" class="headerlink" title="静态初始化"></a>静态初始化</h4><p>数组的初始化和数组元素的赋值同时进行</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] array;</span><br><span class="line">array = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="动态初始化"><a href="#动态初始化" class="headerlink" title="动态初始化"></a>动态初始化</h4><p>数组的初始化和数组元素的赋值分开进行</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] array = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+
+<h4 id="一些错误的写法"><a href="#一些错误的写法" class="headerlink" title="一些错误的写法"></a>一些错误的写法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] array = <span class="keyword">new</span> <span class="keyword">int</span>[];</span><br><span class="line"><span class="keyword">int</span>[] array = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">int</span>[] array = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组的调用"><a href="#数组的调用" class="headerlink" title="数组的调用"></a>数组的调用</h3><p>通过索引调用。索引的取值范围为0到length-1</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[] s1 = <span class="keyword">new</span> String[<span class="number">3</span>];</span><br><span class="line">s1[<span class="number">0</span>] = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line">s1[<span class="number">1</span>] = <span class="string">&quot;李四&quot;</span>;</span><br><span class="line">s1[<span class="number">2</span>] = <span class="string">&quot;王五&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组长度的获取"><a href="#数组长度的获取" class="headerlink" title="数组长度的获取"></a>数组长度的获取</h3><p>通过length方法来获取</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">System.out.println(s1.length);</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，数组的长度与输入的数组元素多少无关</p>
+<h3 id="数组的默认化初始值"><a href="#数组的默认化初始值" class="headerlink" title="数组的默认化初始值"></a>数组的默认化初始值</h3><p>在Java中，如果采用动态初始化数组的方式，当在内存中开辟一块连续的空间的时候，JVM会自动为该数组分配初始化的值</p>
+<ol>
+<li><p>如果数组为整型数组，那么数组的默认初始化值为0</p>
+</li>
+<li><p>如果数组为浮点数，那么数组的默认初始化值为0.0</p>
+</li>
+<li><p>如果数组为char类型数组，那么数组的默认初始化值为0。***<u>而非’0’</u>***</p>
+</li>
+<li><p>如果数组为boolean类型数组，那么数组的默认初始化值为false</p>
+</li>
+<li><p>如果数组为String类型数组，那么数组的默认初始化值为null</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>编程基础学习</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>数组</tag>
+        <tag>变量</tag>
+      </tags>
+  </entry>
+</search>
