@@ -9,14 +9,14 @@
 <li>变量名方法名：首字母小写，从第二个单词开始首字母大写</li>
 <li>常量名：所有字母都大写，不同单词之间用下划线分割</li>
 </ul>
+<span id="more"></span>
+
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="使用变量的注意点："><a href="#使用变量的注意点：" class="headerlink" title="使用变量的注意点："></a>使用变量的注意点：</h3><ul>
 <li>Java中的变量都必须要先定义后使用</li>
 <li>变量的作用域定义在{}内</li>
 <li>只有在作用域中才可以使用变量</li>
 <li>同一个作用域内，不能定义两个相同名称的变量</li>
 </ul>
-<span id="more"></span>
-
 <h3 id="变量的基本类型"><a href="#变量的基本类型" class="headerlink" title="变量的基本类型"></a>变量的基本类型</h3><h4 id="基本数据类型（primitive-type）"><a href="#基本数据类型（primitive-type）" class="headerlink" title="基本数据类型（primitive type）"></a>基本数据类型（primitive type）</h4><ul>
 <li>数值型（整数型byte,short,int，long和浮点数double，float）</li>
 <li>字符型（char)</li>
